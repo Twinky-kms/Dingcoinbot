@@ -1,0 +1,49 @@
+{
+  "name": "GenixBot",
+  "version": "1.2.3",
+  "description": "A utility Discord bot for Genix.cx Community.",
+  "main": "bot.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twinky-kms/genixbot"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "discord-js",
+    "cryptocurrency"
+  ],
+  "author": "Twinky",
+  "contributors": [
+    {
+      "name": "Twinky",
+      "email": "admin@genix.cx"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "^5.0.0",
+    "blockchain.info": "^2.12.1",
+    "config": "^3.0.1",
+    "discord.js": "^11.3.2",
+    "fetch": "^1.1.0",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "maplechange-api": "^1.0.0",
+    "moment-timezone": "^0.5.23",
+    "node-fetch": "^2.6.0",
+    "nodejs-websocket": "^1.7.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

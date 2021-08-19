@@ -1,0 +1,39 @@
+{
+  "production": false,
+  "prodtoken": "DISCORD_API_KEY",
+  "testtoken": "DISCORD_API_KEY",
+  "pricechannel": "876367898094997595",
+  "testchannel": "876376251948994580",
+  "prefix": "&",
+  "coinName": "Dingocoin",
+  "ticker": "DINGO",
+  "website": "https://dingocoin.org/",
+  "botVersion": "1.0.3",
+  "exchanges": {
+    "cratex": {
+      "base_url": "https://cratex.io/api/v1/get_markets_json.php?market=",
+      "active_pairs": ["DINGO/BTC", "DINGO/LTC", "DINGO/DOGE"],
+      "pair_basic": ["btc", "ltc", "doge"]
+    },
+    "delion": {
+      "base_url": "https://api.delion.online/public/v1/tickers/",
+      "active_pairs": ["DINGO_BTC", "DINGO_DOGE"],
+      "pair_basic": ["btc", "doge"]
+    },
+    "dextrade": {
+      "base_url": "https://api.dex-trade.com/v1/public/ticker?pair=",
+      "active_pairs": ["DINGOBTC", "DINGOUSDT"],
+      "pair_basic": ["btc", "usdt"] 
+    },
+    "southxchange": {
+      "base_url": "https://www.southxchange.com/api/v4/price/",
+      "active_pairs": ["DINGO/BTC", "DINGO/LTC"],
+      "pair_basic": ["btc", "ltc"]
+    },
+    "autradex": {
+      "base_url": "https://wallet.autradex.systems/api/v2/tickers/",
+      "active_pairs": ["bpbtc", "bpltc", "bpdoge", "bpac"],
+      "pair_basic": ["btc", "ltc", "doge", "aus"]
+    }
+  }
+}
