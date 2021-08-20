@@ -10,6 +10,9 @@
   "website": "https://dingocoin.org/",
   "botVersion": "1.0.3",
   "exchanges": {
+    "btc": {
+      "base_url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cdogecoin%2Clitecoin%2Caustralia-cash&vs_currencies=usd"
+    },
     "cratex": {
       "base_url": "https://cratex.io/api/v1/get_markets_json.php?market=",
       "active_pairs": ["DINGO/BTC", "DINGO/LTC", "DINGO/DOGE"],

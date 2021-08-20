@@ -15,8 +15,34 @@ module.exports = {
     const dext = cfg.exchanges.dextrade;
     const sxc = cfg.exchanges.southxchange;
     const autx = cfg.exchanges.autradex;
-    //CRATEX
+    const btc = cfg.exchanges.btc;
 
+    try {
+      request(btc.base_url, (error, response, body) => {
+        if (error) {
+          console.log(errmsg, error)
+          return;
+        }
+        if (!response.statusCode == 200) {
+          console.log("bad status code")
+          return;
+        }
+        if (!helpers.JSONCheck(body.trim())) {
+          console.log("json is bad mkay")
+          return;
+        }
+        let d1 = JSON.parse(body.trim());
+        us = data.rawPrices.usd;
+        us.bitcoin = d1.bitcoin;
+        us.litecoin = d1.litecoin;
+        us.dogecoin = d1.dogecoin;
+        us.auscash = d1['australia-cash']
+      })
+    } catch (e) {
+      console.error(e);
+    }
+
+    //CRATEX
     for (var i = 0; i < cx.active_pairs.length; i++) {
       let pair = cx.pair_basic[i];
       try {
