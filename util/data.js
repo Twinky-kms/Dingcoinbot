@@ -1,6 +1,4 @@
-exports.marketData = {};
-exports.prices = [];
-exports.rawPrices = {
+exports.prices = {
     usd: {
         bitcoin: 0,
         litecoin: 0,
@@ -31,4 +29,3 @@ exports.rawPrices = {
         aus: {}
     }
 };
-exports.enabledExchanges = {};
