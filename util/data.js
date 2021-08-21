@@ -1,6 +1,10 @@
-exports.marketData = {};
-exports.prices = [];
-exports.rawPrices = {
+exports.prices = {
+    usd: {
+        bitcoin: 0,
+        litecoin: 0,
+        dogecoin: 0,
+        auscash: 0
+    },
     cratex: {
         btc: {},
         ltc: {},
@@ -25,4 +29,3 @@ exports.rawPrices = {
         aus: {}
     }
 };
-exports.enabledExchanges = {};

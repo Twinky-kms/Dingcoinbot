@@ -1,11 +1,11 @@
 {
-  "name": "GenixBot",
+  "name": "DingoBot",
   "version": "1.2.3",
-  "description": "A utility Discord bot for Genix.cx Community.",
+  "description": "A utility Discord bot for Dingocoin Community.",
   "main": "bot.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twinky-kms/genixbot"
+    "url": "https://github.com/twinky-kms/dingocoinbot"
   },
   "scripts": {
     "start": "node bot.js"
@@ -20,7 +20,7 @@
   "contributors": [
     {
       "name": "Twinky",
-      "email": "admin@genix.cx"
+      "email": "twinkykms@gmail.com"
     }
   ],
   "license": "MIT",

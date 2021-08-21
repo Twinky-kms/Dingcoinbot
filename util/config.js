@@ -12,7 +12,6 @@ exports.website = config.website,
 //exchanges
 exports.exchanges = config.exchanges,
 //misc
-exports.priceLoopTime = 480 * 1000,
 exports.token = config.token,
 exports.botVersion = config.botVersion,
 exports.botId = config.botId;
