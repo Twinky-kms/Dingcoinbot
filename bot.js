@@ -84,16 +84,16 @@ client.on('message', message => {
           " ($ " + calcUSD(Number.parseFloat(delion.btc.ask), Number.parseInt(usd.bitcoin.usd)) + ")" + "\n" +
           " \n" +
           "V: " + parseFloat(delion.btc.volume).toFixed(0) + " " + config.ticker + "\n", true)
-        .addField("Delion (DINGO/DOGE): ", "A: " + parseFloat(delion.doge.ask).toFixed(8) + "\n" +
-          " ($ " + calcUSD(Number.parseFloat(delion.doge.ask), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
-          " \n" +
-          "L: " + parseFloat(delion.doge.last).toFixed(8) + "\n" +
-          " ($ " + calcUSD(Number.parseFloat(delion.doge.last), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
-          " \n" +
-          "B: " + parseFloat(delion.doge.bid).toFixed(8) + "\n" +
-          " ($ " + calcUSD(Number.parseFloat(delion.doge.bid), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
-          " \n" +
-          "V: " + delion.doge.volume + " " + config.ticker + "\n", true)
+        // .addField("Delion (DINGO/DOGE): ", "A: " + parseFloat(delion.doge.ask).toFixed(8) + "\n" +
+        //   " ($ " + calcUSD(Number.parseFloat(delion.doge.ask), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
+        //   " \n" +
+        //   "L: " + parseFloat(delion.doge.last).toFixed(8) + "\n" +
+        //   " ($ " + calcUSD(Number.parseFloat(delion.doge.last), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
+        //   " \n" +
+        //   "B: " + parseFloat(delion.doge.bid).toFixed(8) + "\n" +
+        //   " ($ " + calcUSD(Number.parseFloat(delion.doge.bid), Number.parseFloat(usd.dogecoin.usd)) + ")" + "\n" +
+        //   " \n" +
+        //   "V: " + delion.doge.volume + " " + config.ticker + "\n", true)
         .addField("---> Dex-Trade exchange <---", "[link](https://dex-trade.com/)")
         .addField("Dex-Trade (DINGO/BTC): ", "A: " + Number.parseFloat(dextrade.btc.ask).toFixed(8) + "\n" +
           " ($ " + calcUSD(Number.parseFloat(dextrade.btc.ask), Number.parseInt(usd.bitcoin.usd)) + ")" + "\n" +
