@@ -1,4 +1,4 @@
-const config = require('../config.json')
+const config = require('./config.json')
 
 //we use the same bot discord token for prod and test, this is no longer needed.
 exports.discordtoken = config.production ? config.prodtoken : config.testtoken,
