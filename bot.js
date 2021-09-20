@@ -198,43 +198,6 @@ function buildMessage() {
   })
 }
 
-client.on('message', message => {
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
-
-  if (command == 'price') {
-    if (message.channel.id === config.pricechannel) {
-      client.user.setActivity("Updating prices... 👀")
-      //this can be improved... alot.
-      loopTime = 480 * 1000;
-      price = prices;
-      cratex = price.cratex;
-      delion = price.delion;
-      dextrade = price.dextrade;
-      southxchange = price.southxchange;
-      autradex = price.autradex;
-      usd = price.usd;
-
-      message.channel.send({
-        embed
-      })
-        .then(message => {
-          message.delete(loopTime)
-        })
-      setInterval(function () {
-        message.channel.send({
-          embed
-        })
-          .then(message => {
-            message.delete(loopTime)
-          })
-      }, loopTime);
-    } else {
-      console.log("wrong channel.")
-    }
-  }
-})
-
 client.on('ready', () => {
   console.log('> Price bot launching')
   console.log('>_ ')
@@ -268,15 +231,6 @@ client.on('ready', () => {
     await(timer(500))
     sendMessage();
   }, 10000)
-})
-
-client.on('message', message => {
-  if (message.author.id === client.user.id) return
-  if (message.channel.recipient) return
-  if (!message.content.startsWith(config.prefix)) return
-  if (message.channel.id != config.channelid2) return
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
 })
 
 client.login(config.discordtoken)
