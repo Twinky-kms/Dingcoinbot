@@ -222,6 +222,7 @@ client.on('ready', () => {
     var built = await(buildMessage())
     .catch(console.error)
     .then(built => {
+      console.log("message sent")
       chan.send(built)
     })
   }
@@ -230,7 +231,7 @@ client.on('ready', () => {
     deleteMessages();
     await(timer(100))
     sendMessage();
-  }, 90 * 1000)
+  }, 20 * 1000)
 })
 
 client.login(config.discordtoken)
@@ -369,7 +370,6 @@ async function populateData() {
       console.error(e);
     }
 
-    //BROKEN
     try {
       request("https://api.dex-trade.com/v1/public/book?pair=" + dext.active_pairs[i], (error, response, body) => {
         if (error) {
@@ -393,12 +393,12 @@ async function populateData() {
 
     setTimeout(function () {
       try {
-        let mrkstat = pt1;
+        let mrkstat = pt1.data;
         let ob = pt2;
         let buy = ob.data.buy
         let sell = ob.data.sell
         let bid, ask;
-        console.log(pt1)
+        //console.log(pt1)
         //console.log(pt2)
         for (key in buy[0]) {
           if (buy[0].hasOwnProperty(key)) {
@@ -421,7 +421,7 @@ async function populateData() {
       } catch (e) {
         console.error(e);
       }
-    }, 15000);
+    }, 5000);
   }
   //SOUTHXCHANGE
   for (var i = 0; i < sxc.active_pairs.length; i++) {
@@ -476,5 +476,5 @@ async function populateData() {
       console.error(e);
     }
   }
-  //setTimeout(function () { console.log(prices); }, 30000);
+  console.log("populateData done")
 }
