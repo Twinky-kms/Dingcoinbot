@@ -230,7 +230,7 @@ client.on('ready', () => {
     deleteMessages();
     await(timer(100))
     sendMessage();
-  }, 30 * 1000)
+  }, 90 * 1000)
 })
 
 client.on('message', message => {
