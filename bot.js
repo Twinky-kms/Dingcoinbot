@@ -231,7 +231,7 @@ client.on('ready', () => {
     deleteMessages();
     await(timer(100))
     sendMessage();
-  }, 20 * 1000)
+  }, 30 * 1000)
 })
 
 client.login(config.discordtoken)
@@ -421,7 +421,7 @@ async function populateData() {
       } catch (e) {
         console.error(e);
       }
-    }, 5000);
+    }, 9000);
   }
   //SOUTHXCHANGE
   for (var i = 0; i < sxc.active_pairs.length; i++) {
