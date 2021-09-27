@@ -407,7 +407,7 @@ async function populateData() {
         let buy = ob.data.buy
         let sell = ob.data.sell
         let bid, ask;
-        //console.log(pt1)
+        console.log(pt1)
         //console.log(pt2)
         for (key in buy[0]) {
           if (buy[0].hasOwnProperty(key)) {
