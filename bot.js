@@ -265,9 +265,9 @@ client.on('ready', () => {
 
   setTimeout(async function(){
     deleteMessages();
-    await(timer(500))
+    await(timer(100))
     sendMessage();
-  }, 10000)
+  }, 30 * 1000)
 })
 
 client.on('message', message => {
