@@ -48,7 +48,7 @@ let calcUSD = (btc, usd) => {
 }
 
 function buildMessage() {
-  console.log("updating prices then building message...")
+  console.log("building message...")
   return new Promise(resolve => {
     setTimeout(function() {
       price = prices;
@@ -199,7 +199,7 @@ function buildMessage() {
 }
 
 client.on('ready', () => {
-  console.log('> Price bot launching')
+  console.log('> DingoBot launching')
   console.log('>_ ')
   const chan = client.channels.get(c)
 
@@ -222,15 +222,16 @@ client.on('ready', () => {
     var built = await(buildMessage())
     .catch(console.error)
     .then(built => {
+      console.log("message sent")
       chan.send(built)
     })
   }
 
   setTimeout(async function(){
     deleteMessages();
-    await(timer(500))
+    await(timer(100))
     sendMessage();
-  }, 10000)
+  }, 20 * 1000)
 })
 
 client.login(config.discordtoken)
@@ -369,7 +370,6 @@ async function populateData() {
       console.error(e);
     }
 
-    //BROKEN
     try {
       request("https://api.dex-trade.com/v1/public/book?pair=" + dext.active_pairs[i], (error, response, body) => {
         if (error) {
@@ -393,13 +393,13 @@ async function populateData() {
 
     setTimeout(function () {
       try {
-        let mrkstat = pt1;
+        let mrkstat = pt1.data;
         let ob = pt2;
         let buy = ob.data.buy
         let sell = ob.data.sell
         let bid, ask;
         //console.log(pt1)
-        console.log(pt2)
+        //console.log(pt2)
         for (key in buy[0]) {
           if (buy[0].hasOwnProperty(key)) {
             var value = buy[0][key];
@@ -476,5 +476,5 @@ async function populateData() {
       console.error(e);
     }
   }
-  //setTimeout(function () { console.log(prices); }, 30000);
+  console.log("populateData done")
 }
