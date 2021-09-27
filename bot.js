@@ -48,7 +48,7 @@ let calcUSD = (btc, usd) => {
 }
 
 function buildMessage() {
-  console.log("updating prices then building message...")
+  console.log("building message...")
   return new Promise(resolve => {
     setTimeout(function() {
       price = prices;
@@ -198,45 +198,8 @@ function buildMessage() {
   })
 }
 
-client.on('message', message => {
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
-
-  if (command == 'price') {
-    if (message.channel.id === config.pricechannel) {
-      client.user.setActivity("Updating prices... 👀")
-      //this can be improved... alot.
-      loopTime = 480 * 1000;
-      price = prices;
-      cratex = price.cratex;
-      delion = price.delion;
-      dextrade = price.dextrade;
-      southxchange = price.southxchange;
-      autradex = price.autradex;
-      usd = price.usd;
-
-      message.channel.send({
-        embed
-      })
-        .then(message => {
-          message.delete(loopTime)
-        })
-      setInterval(function () {
-        message.channel.send({
-          embed
-        })
-          .then(message => {
-            message.delete(loopTime)
-          })
-      }, loopTime);
-    } else {
-      console.log("wrong channel.")
-    }
-  }
-})
-
 client.on('ready', () => {
-  console.log('> Price bot launching')
+  console.log('> DingoBot launching')
   console.log('>_ ')
   const chan = client.channels.get(c)
 
@@ -445,7 +408,7 @@ async function populateData() {
         let sell = ob.data.sell
         let bid, ask;
         //console.log(pt1)
-        console.log(pt2)
+        //console.log(pt2)
         for (key in buy[0]) {
           if (buy[0].hasOwnProperty(key)) {
             var value = buy[0][key];
@@ -467,7 +430,7 @@ async function populateData() {
       } catch (e) {
         console.error(e);
       }
-    }, 5000);
+    }, 15000);
   }
   //SOUTHXCHANGE
   for (var i = 0; i < sxc.active_pairs.length; i++) {
